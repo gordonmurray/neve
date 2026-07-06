@@ -2,7 +2,7 @@
 # can run any gate locally before pushing.
 #
 # Tooling note: this project installs CLI tools (terraform, checkov) via Docker
-# rather than onto the host — see CLAUDE.md > Tooling.
+# rather than onto the host — see docs/DESIGN.md#tooling.
 
 PY ?= python3
 SERVICE := services/retrieval-api

@@ -49,5 +49,5 @@ changing a single line in `.github/workflows/ci.yml`:
 ```
 
 Open a PR from that branch and the required **eval-gate** check goes red, so the
-PR cannot merge. That failing pipeline is the marketing asset. Keep the branch
+PR cannot merge. That failing pipeline is the evidence the gate works. Keep the branch
 around; do not merge it.
