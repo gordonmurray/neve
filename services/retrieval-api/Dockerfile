@@ -8,12 +8,13 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
-# Install dependencies first for layer caching.
+# The build backend needs the package source present to resolve requirements, so
+# copy pyproject + the app package together, then install.
 COPY pyproject.toml ./
+COPY app ./app
 RUN pip install --upgrade pip && pip install .
 
-# Application code and the demo corpus that ships in the image.
-COPY app ./app
+# The demo corpus that ships in the image (loaded at runtime, not part of the wheel).
 COPY corpus ./corpus
 
 # Run as a non-root user.
